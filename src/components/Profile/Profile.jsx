@@ -1,45 +1,54 @@
-// import PropTypes from 'prop-types';
+import css from './Profile.module.css';
+import PropTypes from 'prop-types';
 
-export const Profile = ({ events }) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={events.avatar} alt="User avatar" className="avatar" />
-        <p className="name">{events.username}</p>
-        <p className="tag">{events.tag}</p>
-        <p className="location">{events.location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img
+          src={avatar}
+          width={150}
+          height={150}
+          alt="User avatar"
+          className={css.avatar}
+        />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{events.stats.followers}</span>
+      <ul className={css.stats}>
+        <li className={css.item}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{events.stats.views}</span>
+        <li className={css.item}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{views}</span>
         </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{events.stats.likes}</span>
+        <li className={css.item}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
 };
 
-// Profile.propTypes = {
-//   events: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       username: PropTypes.string.isRequired,
-//       tag: PropTypes.string.isRequired,
-//       location: PropTypes.string.isRequired,
-//       avatar: PropTypes.any.isRequired,
-//       stats: {
-//         followers: PropTypes.number.isRequired,
-//         views: PropTypes.number.isRequired,
-//         likes: PropTypes.number.isRequired,
-//       },
-//     })
-//   ),
-// };
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
+};

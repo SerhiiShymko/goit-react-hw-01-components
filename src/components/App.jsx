@@ -4,7 +4,15 @@ import user from '../datas/user.json';
 export const App = () => {
   return (
     <div>
-      <Profile events={user} />
+      <section>
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+      </section>
     </div>
   );
 };
