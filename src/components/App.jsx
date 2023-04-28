@@ -22,13 +22,13 @@ export const App = () => {
       </section>
       <section>
         <Statistics title="Upload stats" stats={data} />
-        {/* <Statistics stats={data} /> */}
+        <Statistics stats={data} />
       </section>
       <section>
         <FriendList friends={friends} />
       </section>
       <section>
-        <TransactionHistory items={transactions} />;
+        <TransactionHistory items={transactions} />
       </section>
     </div>
   );

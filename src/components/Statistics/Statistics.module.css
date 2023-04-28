@@ -2,7 +2,11 @@
   padding-top: 50px;
   width: 500px;
 
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* background-color: #ffffff; */
 }
 .title {
   padding-top: 25px;

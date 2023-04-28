@@ -1,0 +1,45 @@
+.item {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border-radius: 5px;
+  background-color: #b99292;
+
+  width: 500px;
+}
+.item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.status {
+  display: block;
+  margin-left: 15px;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.statusOnline {
+  composes: status;
+  background-color: green;
+}
+.statusOffline {
+  composes: status;
+  background-color: red;
+}
+.avatar {
+  /* padding: 15px; */
+  margin-right: 20px;
+  margin-left: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.name {
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+}
